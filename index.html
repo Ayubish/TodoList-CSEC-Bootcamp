@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List | CSEC Bootcamp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h2>TODO LIST</h2>
+
+      <div class="search-wrapper">
+        <input type="text" placeholder="search note.." class="search-bar" />
+        <select name="filter" id="filter">
+          <option value="all">ALL</option>
+          <option value="completed">Completed</option>
+          <option value="Incomplete">Incomplete</option>
+        </select>
+        <p class="moon-icon">C</p>
+      </div>
+
+      <div class="notes">
+        <h2>There is nothing to see..</h2>
+      </div>
+
+      <button class="add-icon">+</button>
+    </main>
+    <div class="d-none add-popup">
+      <div class="popup-box">
+        <input type="text" placeholder="add note.." />
+        <div class="popup-btns">
+          <button>cancel</button>
+          <button class="popup-add-btn">add</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

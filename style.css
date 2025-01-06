@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 5px;
+    width: 70%;
+    margin: 20px 0;
+    
+}
+input {
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+
+}
+.search-bar {
+    width: 80%;
+}
+#filter {
+    padding: 5px 0;
+    background: purple;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.moon-icon {
+    padding: 5px;
+    background: purple;
+    border-radius: 5px;
+    color: #fff;
+}
+.notes {
+    width: 60%;
+    text-align: center;
+    padding-top: 100px;
+
+}
+button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.add-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: purple;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    position: absolute;
+    bottom: 70px;
+    right: 100px;
+}
+
+.add-popup {
+    background: #0000006e;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+.popup-box {
+    flex-grow: 1;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid gray;
+    height: 200px;
+    display: flex;
+    max-width: 400px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+.popup-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-add-btn {
+    background: purple;
+    color: #fff;
+}
+
+.d-none {
+    display: none;
+}

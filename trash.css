@@ -1,0 +1,80 @@
+body, main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 5%;
+    position: relative;
+    font-family: sans-serif;
+}
+main {
+    max-width: 900px;
+    margin: auto;
+    height: 100vh;
+
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+#search-bar {
+    width: 80%;
+    border-radius: 5px;
+    outline: none;
+    padding: 7px;
+    font-size: 16px;
+}
+select {
+    padding: 5px 0;
+    background: purple;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.moon-icon {
+    background: purple;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+.notes {
+    padding: 0 10%;
+    gap: 10px;
+}
+.note {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+.note input {
+    padding: 5px;
+}
+.note:not(:last-child){
+    border-bottom: 1px solid rgb(102, 0, 128);
+}
+.note span {
+    display: flex;
+    gap: 5px;
+}
+.add-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: purple;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+    border: none;
+
+}
