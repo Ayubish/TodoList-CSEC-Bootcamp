@@ -20,20 +20,20 @@
         <p class="moon-icon">C</p>
       </div>
 
-      <div class="notes">
-        <h2>There is nothing to see..</h2>
-      </div>
+      <div class="notes"></div>
 
-      <button class="add-icon">+</button>
+      <button class="add-icon" onclick="togglePopUp()">+</button>
     </main>
-    <div class="d-none add-popup">
-      <div class="popup-box">
-        <input type="text" placeholder="add note.." />
+    <div class="add-popup d-none">
+      <div class="popup-box d-no-anima">
+        <input type="text" placeholder="add note.." id="note-input" />
         <div class="popup-btns">
-          <button>cancel</button>
-          <button class="popup-add-btn">add</button>
+          <button onclick="togglePopUp()">cancel</button>
+          <button class="popup-add-btn" onclick="record()">add</button>
         </div>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
