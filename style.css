@@ -197,5 +197,4 @@ button {
 .notes input:checked + p {
     text-decoration: line-through;
     font-style: italic;
-    color: #333;
 }

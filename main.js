@@ -26,7 +26,6 @@ function renderNotes() {
   } else {
     notesContainer.innerHTML = "";
     notes.forEach((note, index) => {
-      console.log(note);
       const div = document.createElement("div");
       div.classList.add("note");
       div.innerHTML = `<span>
@@ -50,7 +49,6 @@ const record = (index = 1000) => {
   parseNotes();
   notes.push({ note: noteInput, isCompleted: false });
   localStorage.notes = JSON.stringify(notes);
-
   togglePopUp();
   renderNotes();
 };
