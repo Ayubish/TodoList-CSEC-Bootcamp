@@ -1,4 +1,4 @@
-const popup = document.querySelector(".add-popup");
+const popup = document.querySelector(".new-note-popup");
 const popupBox = document.querySelector(".popup-box");
 const notesContainer = document.querySelector(".notes");
 
@@ -9,6 +9,9 @@ const togglePopUp = () => {
   popupBox.classList.toggle("d-anima");
   popupBox.classList.toggle("d-no-anima");
 };
+function toggleTheme() {
+  document.querySelector("body").classList.toggle("dark");
+}
 function parseNotes() {
   if (localStorage.notes) {
     notes = JSON.parse(localStorage.notes);
@@ -19,9 +22,7 @@ function parseNotes() {
 function renderNotes() {
   parseNotes();
   if (notes.length == 0) {
-    const h2 = document.createElement("h2");
-    h2.innerText = "Nothing to see...";
-    notesContainer.appendChild(h2);
+    notesContainer.innerHTML = `<img src="detective.svg" alt="empty"/><h2>Empty...</h2>`;
   } else {
     notesContainer.innerHTML = "";
     notes.forEach((note, index) => {
@@ -29,26 +30,25 @@ function renderNotes() {
       const div = document.createElement("div");
       div.classList.add("note");
       div.innerHTML = `<span>
-      <input type="checkbox" onchange="${() => tickCompleted(index)}"/> 
-      <p class=${notes[index].isCompleted ? "completed" : "none"}>${
-        note.note
-      }</p>
+      <input type="checkbox" ${
+        note.isCompleted ? "checked" : ""
+      } onchange="tickCompleted(${index})"/> 
+      <p>${note.note}</p>
     </span>
-    <span>
-      <p onclick=(editNote(${index}))>edit</p>
-      <p onclick=(deleteNote(${index}))>delete</p>
-      </span>`;
+    <div class="modify-note">
+      <button onclick=(editNote(${index}))><img src="pen.svg" alt="edit"/></button>
+      <button onclick=(deleteNote(${index}))><img src="delete.svg" alt="delete" /></button>
+      </div>`;
       notesContainer.appendChild(div);
     });
   }
 }
 renderNotes();
-const record = () => {
+const record = (index = 1000) => {
   const noteInput = document.getElementById("note-input").value;
   document.getElementById("note-input").value = "";
   parseNotes();
   notes.push({ note: noteInput, isCompleted: false });
-  //notes.push({ note: noteInput });
   localStorage.notes = JSON.stringify(notes);
 
   togglePopUp();
@@ -64,7 +64,6 @@ function editNote(index) {
   parseNotes();
   togglePopUp();
   document.getElementById("note-input").value = notes[index].note;
-  deleteNote(index);
 }
 function deleteNote(index) {
   parseNotes();

@@ -17,19 +17,22 @@
           <option value="completed">Completed</option>
           <option value="Incomplete">Incomplete</option>
         </select>
-        <p class="moon-icon">C</p>
+        <button class="moon-icon" onclick="toggleTheme()">
+          <img src="moon.svg" alt="dark/light" />
+        </button>
       </div>
 
       <div class="notes"></div>
-
       <button class="add-icon" onclick="togglePopUp()">+</button>
     </main>
-    <div class="add-popup d-none">
+    <!--New note Popup-->
+    <div class="new-note-popup d-none">
       <div class="popup-box d-no-anima">
+        <h2>NEW NOTE</h2>
         <input type="text" placeholder="add note.." id="note-input" />
         <div class="popup-btns">
           <button onclick="togglePopUp()">cancel</button>
-          <button class="popup-add-btn" onclick="record()">add</button>
+          <button class="popup-add-btn" onclick="record()">apply</button>
         </div>
       </div>
     </div>
