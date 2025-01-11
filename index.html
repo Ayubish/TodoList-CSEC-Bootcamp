@@ -15,7 +15,7 @@
         <select name="filter" id="filter">
           <option value="all">ALL</option>
           <option value="completed">Completed</option>
-          <option value="Incomplete">Incomplete</option>
+          <option value="incomplete">Incomplete</option>
         </select>
         <button class="moon-icon" onclick="toggleTheme()">
           <img src="moon.svg" alt="dark/light" />
@@ -27,6 +27,7 @@
     </main>
     <!--New note Popup-->
     <div class="new-note-popup d-none">
+      <div class="popup-close" onclick="togglePopUp()"></div>
       <div class="popup-box d-no-anima">
         <h2>NEW NOTE</h2>
         <input type="text" placeholder="add note.." id="note-input" />

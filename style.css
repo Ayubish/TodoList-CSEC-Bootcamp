@@ -104,6 +104,7 @@ button {
 }
 .new-note-popup h2 {
     text-align: center;
+    color: var(--primary-dark);
 }
 .popup-box {
     flex-grow: 1;
@@ -117,6 +118,13 @@ button {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 15px;
+}
+.popup-close {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .popup-btns {
     width: 100%;
@@ -163,6 +171,7 @@ button {
     flex-grow: 1;
     justify-content: space-between;
     padding: 5px 0;
+    margin: 5px 0;
 }
 .modify-note button{
     padding: 0;
@@ -191,7 +200,7 @@ button {
 }
 
 .note:not(:last-child){
-    border-bottom: 1px solid rgb(102, 0, 128);
+    border-bottom: 0.5px solid var(--accent-purple);
 }
 
 .notes input:checked + p {

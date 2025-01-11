@@ -1,8 +1,22 @@
 const popup = document.querySelector(".new-note-popup");
 const popupBox = document.querySelector(".popup-box");
 const notesContainer = document.querySelector(".notes");
+const filterNote = document.getElementById("filter");
 
 let notes = [];
+let completedNotes = [];
+let incompleteNotes = [];
+
+filterNote.addEventListener("change", () => {
+  const val = document.getElementById("filter").value;
+  if (val == "all") {
+    renderNotes(notes);
+  } else if (val == "completed") {
+    renderCompleted();
+  } else {
+    renderIncomplete();
+  }
+});
 
 const togglePopUp = () => {
   popup.classList.toggle("d-none");
@@ -19,8 +33,7 @@ function parseNotes() {
     localStorage.notes = JSON.stringify(notes);
   }
 }
-function renderNotes() {
-  parseNotes();
+function renderNotes(notes) {
   if (notes.length == 0) {
     notesContainer.innerHTML = `<img src="detective.svg" alt="empty"/><h2>Empty...</h2>`;
   } else {
@@ -42,7 +55,8 @@ function renderNotes() {
     });
   }
 }
-renderNotes();
+parseNotes();
+renderNotes(notes);
 const record = (index = 1000) => {
   const noteInput = document.getElementById("note-input").value;
   document.getElementById("note-input").value = "";
@@ -50,8 +64,20 @@ const record = (index = 1000) => {
   notes.push({ note: noteInput, isCompleted: false });
   localStorage.notes = JSON.stringify(notes);
   togglePopUp();
-  renderNotes();
+  renderNotes(notes);
 };
+
+function renderCompleted() {
+  parseNotes();
+  completedNotes = notes.filter((note) => note.isCompleted == true);
+  renderNotes(completedNotes);
+}
+
+function renderIncomplete() {
+  parseNotes();
+  incompleteNotes = notes.filter((note) => note.isCompleted == false);
+  renderNotes(incompleteNotes);
+}
 
 function tickCompleted(index) {
   parseNotes();
@@ -67,5 +93,5 @@ function deleteNote(index) {
   parseNotes();
   notes.splice(index, 1);
   localStorage.notes = JSON.stringify(notes);
-  renderNotes();
+  renderNotes(notes);
 }
