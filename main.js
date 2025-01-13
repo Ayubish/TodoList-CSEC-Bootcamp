@@ -95,3 +95,5 @@ function deleteNote(index) {
   localStorage.notes = JSON.stringify(notes);
   renderNotes(notes);
 }
+
+//late night visit
